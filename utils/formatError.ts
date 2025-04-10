@@ -1,4 +1,4 @@
-import { HcloudAxiosError } from "./HcloudAxiosError"
+import { HcloudAxiosError } from "@/utils/HcloudAxiosError"
 
 export function formatHcloudError(error: unknown, context: string): Error {
     const err = error as HcloudAxiosError

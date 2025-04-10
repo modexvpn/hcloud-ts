@@ -1,10 +1,9 @@
-// lib/hcloud/index.ts
-import { getServers } from '@/lib/hcloud/modules/getServers'
-import { getServerById } from '@/lib/hcloud/modules/getServerById'
-import { deleteServer } from '@/lib/hcloud/modules/deleteServer'
-import { powerControl } from '@/lib/hcloud/modules/powerControl'
-import { createServer } from '@/lib/hcloud/modules/createServer'
-import { getServerMetrics } from '@/lib/hcloud/modules/getServerMetrics'
+import { getServers } from '@/modules/getServers'
+import { getServerById } from '@/modules/getServerById'
+import { deleteServer } from '@/modules/deleteServer'
+import { powerControl } from '@/modules/powerControl'
+import { createServer } from '@/modules/createServer'
+import { getServerMetrics } from '@/modules/getServerMetrics'
 
 export const hcloud = {
     server: {
