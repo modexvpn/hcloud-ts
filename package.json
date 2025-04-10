@@ -24,8 +24,12 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/modexvpn/hcloud"
+        "url": "git+https://github.com/modexvpn/hcloud-ts.git"
     },
+    "bugs": {
+        "url": "https://github.com/modexvpn/hcloud-ts/issues"
+    },
+    "homepage": "https://github.com/modexvpn/hcloud-ts#readme",
     "dependencies": {
         "axios": "^1.8.4"
     },
@@ -38,4 +42,4 @@
         "tsup": "^8.4.0",
         "typescript": "^5.8.3"
     }
-}
+}  
