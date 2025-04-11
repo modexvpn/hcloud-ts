@@ -1,5 +1,5 @@
-import { hcloudClient } from '@/client'
-import { formatHcloudError } from '@/utils/formatError'
+import { hcloudClient } from "@/client"
+import { formatHcloudError } from "@/utils/formatError"
 
 export async function deleteServer(serverId: number): Promise<void> {
     try {

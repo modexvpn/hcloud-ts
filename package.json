@@ -4,8 +4,11 @@
     "description": "Type-safe Hetzner Cloud SDK for TypeScript / Node.js",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "license": "MIT",
+    "sideEffects": false,
     "author": "Taher",
     "repository": {
         "type": "git",
@@ -34,9 +37,11 @@
         "api"
     ],
     "dependencies": {
-        "axios": "^1.8.4"
+        "axios": "^1.8.4",
+        "zod": "^3.24.2"
     },
     "devDependencies": {
+        "@types/node": "^22.14.0",
         "@typescript-eslint/eslint-plugin": "^8.29.1",
         "@typescript-eslint/parser": "^8.29.1",
         "eslint": "^9.24.0",

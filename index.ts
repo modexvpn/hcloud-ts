@@ -1,9 +1,9 @@
-import { getServers } from '@/modules/getServers'
-import { getServerById } from '@/modules/getServerById'
-import { deleteServer } from '@/modules/deleteServer'
-import { powerControl } from '@/modules/powerControl'
-import { createServer } from '@/modules/createServer'
-import { getServerMetrics } from '@/modules/getServerMetrics'
+import { getServers } from '@/sdk/servers/getServers'
+import { getServerById } from '@/sdk/servers/getServerById'
+import { deleteServer } from '@/sdk/servers/deleteServer'
+import { powerControl } from '@/sdk/servers/actions/powerControl'
+import { createServer } from '@/sdk/servers/createServer'
+import { getServerMetrics } from '@/sdk/servers/getServerMetrics'
 
 export const hcloud = {
     server: {
@@ -12,6 +12,6 @@ export const hcloud = {
         getMetrics: getServerMetrics,
         delete: deleteServer,
         create: createServer,
-        power: powerControl,
+        powerControl,
     },
 }
