@@ -11,6 +11,11 @@ A clean, type-safe SDK for the Hetzner Cloud API using Node.js and TypeScript.
 - 🔁 Supports both CommonJS and ESM
 - 🗂️ Clean folder structure for scalability
 
+## ⚠️ SDK Status
+This SDK is stable, but not feature-complete yet.
+We're already at v1.x, and the current API won't break — but we're still adding new features regularly.
+Breaking changes (if needed) will be released as v2.0.0.
+
 ## ⚠️ JS Usage Warning
 
 This SDK is currently **TypeScript-first** and does not include runtime validation (e.g. Zod).
