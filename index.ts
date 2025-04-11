@@ -1,17 +1,11 @@
-import { getServers } from '@/sdk/servers/getServers'
-import { getServerById } from '@/sdk/servers/getServerById'
-import { deleteServer } from '@/sdk/servers/deleteServer'
-import { powerControl } from '@/sdk/servers/actions/powerControl'
-import { createServer } from '@/sdk/servers/createServer'
-import { getServerMetrics } from '@/sdk/servers/getServerMetrics'
+import * as server from '@/sdk/servers'
+import * as serverAction from '@/sdk/servers/actions'
+import * as serverType from '@/sdk/server-type'
 
 export const hcloud = {
-    server: {
-        list: getServers.list,
-        getById: getServerById,
-        getMetrics: getServerMetrics,
-        delete: deleteServer,
-        create: createServer,
-        powerControl,
-    },
+  server: {
+    ...server,
+    ...serverAction,
+  },
+  ...serverType
 }
