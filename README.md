@@ -5,7 +5,7 @@ A clean, type-safe SDK for the Hetzner Cloud API using Node.js and TypeScript.
 ## Features
 
 - 📦 Fully type-safe with enums and types
-- 🧼 Modular structure: `hcloud.getServers.list()`
+- 🧼 Modular structure: `hcloud.server.list()`
 - ⚠️ Centralized error handling with `formatHcloudError()`
 - ⚙️ Axios-based HTTP client with auto-authentication
 - 🔁 Supports both CommonJS and ESM
@@ -52,8 +52,11 @@ const metrics = await hcloud.server.getMetrics(123456)
 
 ### Power control
 ```ts
-await hcloud.server.power.on(123456)
-await hcloud.server.power.shutdown(123456)
+await hcloud.server.powerControl.off(123456)
+await hcloud.server.powerControl.reboot(123456)
+await hcloud.server.powerControl.on(123456)
+await hcloud.server.powerControl.reset(123456)
+await hcloud.server.powerControl.shutdown(123456)
 ```
 
 ### Create a server
