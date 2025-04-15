@@ -3,8 +3,8 @@ import { getServers } from './sdk/servers/getServers'
 import { deleteServer } from './sdk/servers/deleteServer'
 import { createServer } from './sdk/servers/createServer'
 import { getServerMetrics } from './sdk/servers/getServerMetrics'
-import { updateServer } from './sdk/servers/updateServer'
-import { attachIso } from './sdk/servers/actions/attachIso'
+import { updateServer } from '@/sdk/servers/updateServer'
+import { attachIso } from '@/sdk/servers/actions/attachIso'
 import { detachIso } from './sdk/servers/actions/detachIso'
 import { rebuild } from './sdk/servers/actions/rebuild'
 import { disableBackup } from './sdk/servers/actions/disableBackup'
@@ -16,9 +16,10 @@ import { getActions } from './sdk/servers/actions/getActions'
 import { getServersTypes } from './sdk/server-type/getServerTypes'
 import { getServerTypeById } from './sdk/server-type/getServerType'
 import { getLocations } from './sdk/locations/getLocations'
+import { getLocation } from './sdk/locations/getLocation'
 
 export const hcloud = {
-    server: {
+    servers: {
         list: getServers.list,
         getById: getServerById,
         delete: deleteServer,
@@ -33,13 +34,14 @@ export const hcloud = {
         powerControl,
         resetPassword,
         changeProtection,
-        getActions
+        listActions: getActions
     },
-    serverType: {
+    serverTypes: {
         list: getServersTypes.list,
         getById: getServerTypeById
     },
     locations: {
-        list: getLocations.list
+        list: getLocations,
+        getById: getLocation
     }
 }

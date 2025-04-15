@@ -1,5 +1,5 @@
 import { hcloudClient } from "@/client"
-import { ServerType } from "@/types/server-type.types"
+import { ServerType } from "@/types/server-type.schema"
 import { formatHcloudError } from "@/utils/formatError"
 
 export type GetServerTypeResponse = {

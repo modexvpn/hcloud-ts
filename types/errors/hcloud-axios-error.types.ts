@@ -1,22 +1,29 @@
-import { HcloudErrorCode } from "../enums/error.enums"
+import { z } from "zod"
+import { HcloudErrorCodeEnum } from "@/types/enums/error.enums"
 
-export interface HcloudAxiosError {
-    message?: string
-    response?: {
-        data?: {
-            error?: {
-                code: HcloudErrorCode
-                message: string
-                details?: {
-                    fields?: Array<{
-                        name: string
-                        messages?: string[]
-                    }>
-                    limits?: Array<{
-                        name: string
-                    }>
-                }
-            }
-        }
-    }
-}
+export const HcloudAxiosErrorSchema = z.object({
+    message: z.string().optional(),
+    response: z.object({
+        data: z.object({
+            error: z.object({
+                code: HcloudErrorCodeEnum,
+                message: z.string(),
+                details: z.object({
+                    fields: z.array(
+                        z.object({
+                            name: z.string(),
+                            messages: z.array(z.string()).optional(),
+                        })
+                    ).optional(),
+                    limits: z.array(
+                        z.object({
+                            name: z.string(),
+                        })
+                    ).optional(),
+                }).optional(),
+            }).optional(),
+        }).optional(),
+    }).optional(),
+})
+
+export type HcloudAxiosError = z.infer<typeof HcloudAxiosErrorSchema>

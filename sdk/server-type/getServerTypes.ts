@@ -1,7 +1,7 @@
 
 import { hcloudClient } from "@/client"
 import { Meta } from "@/types/common/meta.types"
-import { ServerType } from "@/types/server-type.types"
+import { ServerType } from "@/types/server-type.schema"
 import { formatHcloudError } from "@/utils/formatError"
 
 /**

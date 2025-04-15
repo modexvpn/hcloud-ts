@@ -10,7 +10,7 @@
 
 import { hcloudClient } from "@/client"
 import { Meta } from "@/types/common/meta.types"
-import { Location } from "@/types/location.types"
+import { Location } from "@/types/location.schema"
 import { formatHcloudError } from "@/utils/formatError"
 
 export type GetLocationsQuery = {
@@ -25,16 +25,13 @@ export type GetLocationsResponse = {
     meta: Meta
 }
 
-
-export const getLocations = {
-    async list(query?: GetLocationsQuery): Promise<GetLocationsResponse> {
-        try {
-            const res = await hcloudClient.get('/locations', {
-                params: query,
-            })
-            return res.data as GetLocationsResponse
-        } catch (error: unknown) {
-            throw formatHcloudError(error, 'Failed to list locations')
-        }
-    },
+export async function getLocations(query?: GetLocationsQuery): Promise<GetLocationsResponse> {
+    try {
+        const res = await hcloudClient.get('/locations', {
+            params: query,
+        })
+        return res.data as GetLocationsResponse
+    } catch (error: unknown) {
+        throw formatHcloudError(error, 'Failed to list locations')
+    }
 }

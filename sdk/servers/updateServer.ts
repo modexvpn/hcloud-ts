@@ -1,6 +1,6 @@
 import { hcloudClient } from "@/client"
 import { formatHcloudError } from "@/utils/formatError"
-import { Server } from "@/types/servers/server.types"
+import { Server } from "@/types/servers/server.schema"
 import { Label } from "@/types/common/label.types"
 
 export type UpdateServerOptions = {

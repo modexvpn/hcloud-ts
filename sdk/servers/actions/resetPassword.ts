@@ -1,5 +1,5 @@
 import { hcloudClient } from "@/client";
-import { Action } from "@/types/servers/actions/server-action.types";
+import { Action } from "@/types/servers/actions/server-action.schema";
 import { formatHcloudError } from "@/utils/formatError";
 
 export type ResetPasswordResponse = {

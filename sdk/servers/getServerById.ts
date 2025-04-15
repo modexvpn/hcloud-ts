@@ -1,5 +1,5 @@
 import { hcloudClient } from "@/client"
-import { Server } from "@/types/servers/server.types"
+import { Server } from "@/types/servers/server.schema"
 import { formatHcloudError } from "@/utils/formatError"
 
 export async function getServerById(serverId: number): Promise<Server> {
