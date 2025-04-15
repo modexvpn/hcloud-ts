@@ -15,6 +15,7 @@ import { changeProtection } from './sdk/servers/actions/changeProtection'
 import { getActions } from './sdk/servers/actions/getActions'
 import { getServersTypes } from './sdk/server-type/getServerTypes'
 import { getServerTypeById } from './sdk/server-type/getServerType'
+import { getLocations } from './sdk/locations/getLocations'
 
 export const hcloud = {
     server: {
@@ -38,4 +39,7 @@ export const hcloud = {
         list: getServersTypes.list,
         getById: getServerTypeById
     },
+    locations: {
+        list: getLocations.list
+    }
 }
