@@ -26,7 +26,7 @@
         "prepare": "npm run build",
         "dev": "tsup --watch",
         "lint": "eslint . --ext .ts",
-        "test": "echo \"No tests yet\""
+        "test": "vitest"
     },
     "keywords": [
         "hetzner",
@@ -38,6 +38,7 @@
     ],
     "dependencies": {
         "axios": "^1.8.4",
+        "dotenv": "^16.5.0",
         "zod": "^3.24.2"
     },
     "devDependencies": {
@@ -48,6 +49,7 @@
         "eslint-config-prettier": "^10.1.2",
         "prettier": "^3.5.3",
         "tsup": "^8.4.0",
-        "typescript": "^5.8.3"
+        "typescript": "^5.8.3",
+        "vitest": "^3.1.1"
     }
 }

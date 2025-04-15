@@ -7,7 +7,7 @@ export type ResetPasswordResponse = {
     action: Action
 }
 
-export async function resetPassword(serverId: string): Promise<ResetPasswordResponse> {
+export async function resetPassword(serverId: number): Promise<ResetPasswordResponse> {
     try {
         const res = await hcloudClient.post(`/servers/${serverId}/actions/reset_password`)
         return res.data as ResetPasswordResponse

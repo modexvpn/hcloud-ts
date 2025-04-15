@@ -27,6 +27,7 @@ export type GetServersQuery = {
 
 
 export type GetServersResponse = {
+    some(arg0: (s: any) => boolean): any
     servers: Server[]
     meta: Meta
 }

@@ -6,6 +6,7 @@ import { Image } from "@/types/image.types"
 import { Protection } from "@/types/protection.types"
 import { PlacementGroup } from "@/types/placement-group.types"
 import { ServerStatus } from "@/types/enums/server.enums"
+import { Label } from "@/types/common/label.types"
 
 export type Server = {
     id: number
@@ -25,7 +26,7 @@ export type Server = {
     ingoing_traffic: number
     included_traffic: number
     protection: Protection
-    labels: Record<string, string>
+    labels: Label
     volumes: number[]
     load_balancers: number[]
     primary_disk_size: number

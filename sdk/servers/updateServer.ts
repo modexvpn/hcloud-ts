@@ -8,7 +8,7 @@ export type UpdateServerOptions = {
     labels?: Label
 }
 
-export async function updateServer(serverId: string, options: UpdateServerOptions): Promise<Server> {
+export async function updateServer(serverId: number, options: UpdateServerOptions): Promise<Server> {
     try {
         const res = await hcloudClient.put(`/servers/${serverId}`, options)
         return res.data.server as Server

@@ -2,7 +2,7 @@ import { hcloudClient } from "@/client"
 import { Action } from "@/types/servers/actions/server-action.types"
 import { formatHcloudError } from "@/utils/formatError"
 
-export async function detachIso(serverId: string): Promise<Action> {
+export async function detachIso(serverId: number): Promise<Action> {
     try {
         const res = await hcloudClient.post(`/servers/${serverId}/actions/detach_iso`)
         return res.data as Action
