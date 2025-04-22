@@ -13,11 +13,11 @@ import { powerControl } from './sdk/servers/actions/powerControl'
 import { resetPassword } from './sdk/servers/actions/resetPassword'
 import { changeProtection } from './sdk/servers/actions/changeProtection'
 import { getActions } from './sdk/servers/actions/getActions'
-import { getServersTypes } from './sdk/server-type/getServerTypes'
-import { getServerTypeById } from './sdk/server-type/getServerType'
 import { getLocations } from './sdk/locations/getLocations'
 import { getLocation } from './sdk/locations/getLocation'
 import { sshIntoServer } from './sdk/servers/actions/sshIntoServer'
+import { getServersTypes } from './sdk/servers/server-type/getServerTypes'
+import { getServerTypeById } from './sdk/servers/server-type/getServerType'
 
 export const hcloud = {
     servers: {
@@ -36,11 +36,9 @@ export const hcloud = {
         resetPassword,
         changeProtection,
         listActions: getActions,
-        sshIntoServer
-    },
-    serverTypes: {
-        list: getServersTypes.list,
-        getById: getServerTypeById
+        sshIntoServer,
+        listServerType: getServersTypes.list,
+        getServerTypeById: getServerTypeById
     },
     locations: {
         list: getLocations,

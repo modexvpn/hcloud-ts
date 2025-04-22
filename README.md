@@ -107,9 +107,9 @@ HCLOUD_API_TOKEN=your-token-here
 - [x] [Errors](https://docs.hetzner.cloud/#errors)
 - [x] [Servers](https://docs.hetzner.cloud/#servers)
   - [~] [Actions](https://docs.hetzner.cloud/#server-actions)
-  - [~] [Types](https://docs.hetzner.cloud/#server-types)
-- [~] [Locations](https://docs.hetzner.cloud/#locations)
-  - [ ] [Datacenters](https://docs.hetzner.cloud/#datacenters)
+  - [x] [Types](https://docs.hetzner.cloud/#server-types)
+- [x] [Locations](https://docs.hetzner.cloud/#locations)
+  - [x] [Datacenters](https://docs.hetzner.cloud/#datacenters)
 - [ ] [Actions](https://docs.hetzner.cloud/#actions)
 
 ### Security
