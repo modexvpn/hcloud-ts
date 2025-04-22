@@ -17,6 +17,7 @@ import { getServersTypes } from './sdk/server-type/getServerTypes'
 import { getServerTypeById } from './sdk/server-type/getServerType'
 import { getLocations } from './sdk/locations/getLocations'
 import { getLocation } from './sdk/locations/getLocation'
+import { sshIntoServer } from './sdk/servers/actions/sshIntoServer'
 
 export const hcloud = {
     servers: {
@@ -34,7 +35,8 @@ export const hcloud = {
         powerControl,
         resetPassword,
         changeProtection,
-        listActions: getActions
+        listActions: getActions,
+        sshIntoServer
     },
     serverTypes: {
         list: getServersTypes.list,
