@@ -18,13 +18,42 @@ This SDK is **stable**, but not yet feature-complete.
 We're already on **v1.x** and will maintain backward compatibility.  
 Any breaking changes will be released as **v2.0.0**.
 
-## Installation
+---
+
+## 🚀 What's New in v1.3
+
+### ✨ Features
+- **🆕 `getDatacenter` + `getDatacenters`**
+  - Fetch individual datacenter info
+  - Filter, sort, and paginate across datacenters
+  - Returns full `location` + `server_types` support
+
+- **🆕 `sshIntoServer`**
+  - Execute commands over SSH using `node-ssh`
+  - Automatically handles connection, command, and cleanup
+  - Can be used to provision servers post-creation
+
+- **→ `serverTypes` functions have been moved to `sdk/servers/server-type/`**
+  - Cleaner structure
+  - Better grouping with related server actions
+
+### ✅ Test Coverage
+- Full integration tests for:
+  - `getLocation`, `getLocations`
+  - `getDatacenter`, `getDatacenters`
+  - `sshIntoServer` (with mocks)
+
+---
+
+## 📆 Installation
 
 ```bash
 npm install @modexvpn/hcloud
 ```
 
-## Usage
+---
+
+## 🧠 Usage
 
 ### List all servers
 ```ts
@@ -68,7 +97,16 @@ await hcloud.servers.create({
 await hcloud.servers.delete(123456)
 ```
 
-## Environment Setup
+### SSH Into Server
+```ts
+const { stdout } = await sshIntoServer("192.168.1.100", "apt update && apt upgrade -y", "root")
+console.log(stdout)
+```
+> 💡 Requires `SSH_PRIVATE_KEY` in your environment
+
+---
+
+## 🔢 Environment Setup
 
 Create a `.env` file and add your Hetzner API token:
 
@@ -76,7 +114,9 @@ Create a `.env` file and add your Hetzner API token:
 HCLOUD_API_TOKEN=your-token-here
 ```
 
-## Project Structure
+---
+
+## 📁 Project Structure
 
 ```
 @modexvpn/hcloud
@@ -85,10 +125,16 @@ HCLOUD_API_TOKEN=your-token-here
 ├── sdk/
 │   ├── servers/
 │   │   ├── actions/
+│   │   │   └── sshIntoServer.ts
 │   │   ├── createServer.ts
-│   │   ├── ...
-│   └── server-type/
-│       ├── ...
+│   │   └── server-type/
+│   │       ├── getServerTypes.ts
+│   │       ├── getServerType.ts
+│   │       └── index.ts
+│   └── locations/
+│       └── datacenters/
+│           ├── getDatacenters.ts
+│           └── getDatacenter.ts
 ├── types/
 │   ├── common/
 │   ├── enums/
@@ -101,7 +147,9 @@ HCLOUD_API_TOKEN=your-token-here
 ├── README.md
 ```
 
-## API Coverage
+---
+
+## 🔫 API Coverage
 
 ### Core Resources
 - [x] [Errors](https://docs.hetzner.cloud/#errors)
@@ -130,7 +178,9 @@ HCLOUD_API_TOKEN=your-token-here
 ### Billing
 - [ ] [Pricing](https://docs.hetzner.cloud/#pricing)
 
-## Contributing
+---
+
+## 📝 Contributing
 
 PRs welcome! Please follow the existing structure and run:
 
@@ -139,10 +189,12 @@ npm run lint
 npm run build
 ```
 
-## Resources
+---
+
+## 📄 Resources
 
 - [Hetzner Cloud API Docs](https://docs.hetzner.cloud)
 
-## License
+## 👉 License
 
 MIT © 2025 MODEX
