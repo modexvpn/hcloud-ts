@@ -161,7 +161,7 @@ HCLOUD_API_TOKEN=your-token-here
 - [ ] [Actions](https://docs.hetzner.cloud/#actions)
 
 ### Security
-- [ ] [SSH Keys](https://docs.hetzner.cloud/#ssh-keys)
+- [x] [SSH Keys](https://docs.hetzner.cloud/#ssh-keys)
 - [ ] [Certificates](https://docs.hetzner.cloud/#certificates)
 
 ### Storage & Networking

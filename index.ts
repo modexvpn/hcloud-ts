@@ -18,6 +18,8 @@ import { getLocation } from './sdk/locations/getLocation'
 import { sshIntoServer } from './sdk/servers/actions/sshIntoServer'
 import { getServersTypes } from './sdk/servers/server-type/getServerTypes'
 import { getServerTypeById } from './sdk/servers/server-type/getServerType'
+import { getSSHKey } from './sdk/security/ssh-keys/getSSHKey'
+import { getSSHKeys } from './sdk/security/ssh-keys/getSSHKeys'
 
 export const hcloud = {
     servers: {
@@ -43,5 +45,9 @@ export const hcloud = {
     locations: {
         list: getLocations,
         getById: getLocation
+    },
+    security: {
+        getSSHKey,
+        listSSHKeys: getSSHKeys,
     }
 }
