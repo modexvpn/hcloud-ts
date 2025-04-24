@@ -20,28 +20,48 @@ Any breaking changes will be released as **v2.0.0**.
 
 ---
 
-## 🚀 What's New in v1.3
+## 🚀 What's New in v1.4
 
-### ✨ Features
-- **🆕 `getDatacenter` + `getDatacenters`**
-  - Fetch individual datacenter info
-  - Filter, sort, and paginate across datacenters
-  - Returns full `location` + `server_types` support
+- `createSSHKey(options)` — Create a new SSH key
+- `getSSHKeys()` — List all SSH keys
+- `getSSHKey(id)` — Get a single SSH key by ID
+- `updateSSHKey(id, options)` — Update an existing SSH key
+- `deleteSSHKey(id)` — Delete an SSH key
 
-- **🆕 `sshIntoServer`**
-  - Execute commands over SSH using `node-ssh`
-  - Automatically handles connection, command, and cleanup
-  - Can be used to provision servers post-creation
+### ✍️ Usage Examples
 
-- **→ `serverTypes` functions have been moved to `sdk/servers/server-type/`**
-  - Cleaner structure
-  - Better grouping with related server actions
+#### Create SSH Key
+```ts
+const sshKey = await hcloud.security.createSSHKey({
+  name: "modex-prod-key",
+  public_key: "ssh-ed25519 AAAAC3N...",
+  labels: { environment: "prod" }
+})
+```
 
-### ✅ Test Coverage
-- Full integration tests for:
-  - `getLocation`, `getLocations`
-  - `getDatacenter`, `getDatacenters`
-  - `sshIntoServer` (with mocks)
+#### List SSH Keys
+```ts
+const allKeys = await hcloud.security.listSSHKeys()
+```
+
+#### Get SSH Key by ID
+```ts
+const key = await hcloud.security.getSSHKey(12345)
+```
+
+#### Update SSH Key
+```ts
+const updated = await hcloud.security.updateSSHKey(12345, {
+  name: "modex-updated-key",
+  labels: { updated: "true" }
+})
+```
+
+#### Delete SSH Key
+```ts
+await hcloud.security.deleteSSHKey(12345)
+```
+
 
 ---
 
