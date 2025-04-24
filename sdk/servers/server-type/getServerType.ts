@@ -6,7 +6,7 @@ export type GetServerTypeResponse = {
     server: ServerType
 }
 
-export async function getServerTypeById(serverId: string): Promise<GetServerTypeResponse> {
+export async function getServerTypeById(serverId: number): Promise<GetServerTypeResponse> {
     try {
         const res = await hcloudClient.get(`/server_types/${serverId}`)
         return res.data as GetServerTypeResponse
